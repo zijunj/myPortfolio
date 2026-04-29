@@ -2,6 +2,7 @@
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import image from "next/image";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 
@@ -12,7 +13,8 @@ const projects = [
     title: "AI-Driven Esports Statistics Platform",
     category: "Full-Stack Web App",
     year: "2025",
-    link: "https://github.com/zijunj/strafe",
+    link: "https://main.dj5wgqe9zayl7.amplifyapp.com/",
+    image: "/strafe-sc.png",
     description:
       "Built a real-time Valorant statistics platform with React, Supabase, API integrations, Java and Node.js services, OpenAI-powered insights, and AWS deployment.",
     stack: ["React", "Supabase", "Node.js", "Java", "AWS", "OpenAI"],
@@ -22,6 +24,7 @@ const projects = [
     category: "Android Application",
     year: "2025",
     link: "https://github.com/zijunj/SKIN",
+    image: "/skin-sc.png",
     description:
       "Developed a Kotlin app with Jetpack Compose for personalized product recommendations, barcode scanning, Firebase-backed flows, and product API integrations.",
     stack: ["Kotlin", "Jetpack Compose", "Firebase", "APIs"],
@@ -30,7 +33,8 @@ const projects = [
     title: "Ultimate Frisbee Statistics Website",
     category: "Data + Web Platform",
     year: "2024",
-    link: "https://github.com/zijunj/Ultimate-Frisbee-Website",
+    link: "https://scientist-quotes-0e629fe0ba9a.herokuapp.com/",
+    image: "/ultistats-sc.png",
     description:
       "Created a Django-based analytics site with scraping pipelines, advanced filtering, and predictive modeling for collegiate frisbee player performance.",
     stack: ["Django", "Python", "Data Scraping", "Modeling"],
@@ -80,7 +84,7 @@ const skills = [
 ];
 
 const metrics = [
-  { value: "4+", label: "Shipped portfolio-ready builds" },
+  { value: "5", label: "Shipped portfolio-ready builds" },
   { value: "3", label: "Product areas across web, mobile, and ML" },
   { value: "2025", label: "Boston University CS graduate" },
 ];
@@ -102,7 +106,9 @@ export default function Home() {
 
     const ctx = gsap.context(() => {
       const heroItems = gsap.utils.toArray<HTMLElement>("[data-hero-item]");
-      const animatedItems = gsap.utils.toArray<HTMLElement>("[data-animate-item]");
+      const animatedItems = gsap.utils.toArray<HTMLElement>(
+        "[data-animate-item]",
+      );
 
       gsap.set(animatedItems, {
         autoAlpha: 1,
@@ -129,7 +135,9 @@ export default function Home() {
       const groups = gsap.utils.toArray<HTMLElement>("[data-animate-group]");
 
       groups.forEach((group) => {
-        const items = group.querySelectorAll<HTMLElement>("[data-animate-item]");
+        const items = group.querySelectorAll<HTMLElement>(
+          "[data-animate-item]",
+        );
 
         if (!items.length) {
           return;
@@ -218,8 +226,10 @@ export default function Home() {
                 data-hero-item
                 className="mt-6 max-w-2xl text-sm leading-8 text-white/68 md:text-base"
               >
-                I build polished front-end experiences and full-stack products
-                with a strong eye for design, usability, and technical clarity.
+                Full stack developer with production experience. I ship
+                end-to-end products in React, Next.js, Python, and AWS - from a
+                live Valorant stats platform to an Android skincare app with
+                Firebase and Jetpack Compose
               </p>
             </div>
 
@@ -273,9 +283,12 @@ export default function Home() {
                 <span>Open to opportunities</span>
               </div>
               <p className="mt-6 text-sm leading-7 text-white/72">
-                I&apos;m a Boston University computer science graduate focused on
-                front-end engineering, modern product UI, and full-stack builds
-                that translate complex ideas into clean interactive systems.
+                I am a Computer Science graduate from Boston University (GPA
+                3.77) currently interning at Skinstric, where I build production
+                React and Next.js components integrated with the OpenAI Vision
+                API. My projects span web platforms, Android apps, data
+                pipelines, and ML models. I am looking for a junior full-stack
+                role where I can keep shipping real product
               </p>
               <div className="mt-8 grid gap-3 sm:grid-cols-2">
                 <a
@@ -320,7 +333,10 @@ export default function Home() {
               Featured Systems
             </h2>
           </div>
-          <p data-animate-item className="max-w-xl text-sm leading-7 text-white/62">
+          <p
+            data-animate-item
+            className="max-w-xl text-sm leading-7 text-white/62"
+          >
             Projects across product UI, mobile development, analytics, and
             machine learning, designed to show both implementation depth and
             strong technical judgment.
@@ -333,7 +349,11 @@ export default function Home() {
               key={project.title}
               href={project.link}
               target={project.link.startsWith("http") ? "_blank" : undefined}
-              rel={project.link.startsWith("http") ? "noopener noreferrer" : undefined}
+              rel={
+                project.link.startsWith("http")
+                  ? "noopener noreferrer"
+                  : undefined
+              }
               data-animate-item
               className="block"
             >
@@ -362,6 +382,19 @@ export default function Home() {
                         </span>
                       ))}
                     </div>
+                    {project.image ? (
+                      <div className="mt-8 overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/5">
+                        <div className="relative aspect-[16/9]">
+                          <Image
+                            src={project.image}
+                            alt={`${project.title} screenshot`}
+                            fill
+                            sizes="(max-width: 768px) 100vw, 60vw"
+                            className="object-cover object-top"
+                          />
+                        </div>
+                      </div>
+                    ) : null}
                   </div>
                   <div className="flex items-center justify-between gap-5 text-[11px] uppercase tracking-[0.28em] text-white/35 md:block md:text-right">
                     <span>{project.year}</span>
@@ -393,7 +426,10 @@ export default function Home() {
         </div>
 
         <div className="grid gap-6">
-          <div data-animate-item className="tech-panel rounded-[2rem] p-6 md:p-8">
+          <div
+            data-animate-item
+            className="tech-panel rounded-[2rem] p-6 md:p-8"
+          >
             <p className="max-w-3xl text-sm leading-8 text-white/72">
               I like building interfaces that feel modern, responsive, and
               intentional. My background spans web development, mobile app
@@ -443,7 +479,10 @@ export default function Home() {
             </h2>
           </div>
 
-          <div data-animate-item className="tech-panel rounded-[2rem] p-6 md:p-8">
+          <div
+            data-animate-item
+            className="tech-panel rounded-[2rem] p-6 md:p-8"
+          >
             <div className="flex flex-wrap gap-3">
               {skills.map((skill) => (
                 <span
@@ -463,7 +502,10 @@ export default function Home() {
         data-animate-group
         className="relative mx-auto w-full max-w-7xl px-6 pb-16 pt-18 md:px-10 md:pb-20 md:pt-22 lg:px-14"
       >
-        <div data-animate-item className="tech-panel rounded-[2.25rem] p-6 md:p-8 lg:p-10">
+        <div
+          data-animate-item
+          className="tech-panel rounded-[2.25rem] p-6 md:p-8 lg:p-10"
+        >
           <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
             <div>
               <p className="text-[11px] uppercase tracking-[0.34em] text-[var(--muted)]">
