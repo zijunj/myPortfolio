@@ -212,7 +212,7 @@ export default function Home() {
                 data-hero-item
                 className="mb-5 text-[11px] uppercase tracking-[0.34em] text-[var(--muted)]"
               >
-                Software Engineer / Frontend Developer
+                Software Engineer / Full Stack Developer
               </p>
               <h1
                 data-hero-item
