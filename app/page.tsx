@@ -13,7 +13,7 @@ const projects = [
     title: "AI-Driven Esports Statistics Platform",
     category: "Full-Stack Web App",
     year: "2025",
-    link: "https://main.dj5wgqe9zayl7.amplifyapp.com/",
+    link: "https://strafe-phi.vercel.app/",
     image: "/strafe-sc.png",
     description:
       "Built a real-time Valorant statistics platform with React, Supabase, API integrations, Java and Node.js services, OpenAI-powered insights, and AWS deployment.",
