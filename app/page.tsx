@@ -2,8 +2,6 @@
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import image from "next/image";
-import Image from "next/image";
 import { useEffect, useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -11,82 +9,147 @@ gsap.registerPlugin(ScrollTrigger);
 const projects = [
   {
     title: "AI-Driven Esports Statistics Platform",
-    category: "Full-Stack Web App",
-    year: "2025",
-    link: "https://strafe-phi.vercel.app/",
-    image: "/strafe-sc.png",
+    kind: "AI / Full-Stack Platform / 2025",
+    href: "https://strafe-phi.vercel.app/",
     description:
-      "Built a real-time Valorant statistics platform with React, Supabase, API integrations, Java and Node.js services, OpenAI-powered insights, and AWS deployment.",
-    stack: ["React", "Supabase", "Node.js", "Java", "AWS", "OpenAI"],
+      "Full-stack Valorant esports platform with matches, tournaments, results, stats, and news. Built with API ingestion, Supabase data flows, OpenAI-powered natural-language stats search, and AWS deployment.",
+    stack: ["React", "Next.js", "TypeScript", "Supabase", "AWS", "OpenAI"],
   },
   {
     title: "Personalized Skincare & Makeup App",
-    category: "Android Application",
-    year: "2025",
-    link: "https://github.com/zijunj/SKIN",
-    image: "/skin-sc.png",
+    kind: "Android App / Mobile / 2025",
+    href: "https://github.com/zijunj/SKIN",
     description:
-      "Developed a Kotlin app with Jetpack Compose for personalized product recommendations, barcode scanning, Firebase-backed flows, and product API integrations.",
-    stack: ["Kotlin", "Jetpack Compose", "Firebase", "APIs"],
+      "Kotlin and Jetpack Compose app for personalized product recommendations, barcode scanning, Firebase-backed user flows, and product API integrations.",
+    stack: ["Kotlin", "Jetpack Compose", "Firebase", "REST APIs"],
   },
   {
     title: "Ultimate Frisbee Statistics Website",
-    category: "Data + Web Platform",
-    year: "2024",
-    link: "https://scientist-quotes-0e629fe0ba9a.herokuapp.com/",
-    image: "/ultistats-sc.png",
+    kind: "Data / Web Platform / 2024",
+    href: "https://scientist-quotes-0e629fe0ba9a.herokuapp.com/",
     description:
-      "Created a Django-based analytics site with scraping pipelines, advanced filtering, and predictive modeling for collegiate frisbee player performance.",
-    stack: ["Django", "Python", "Data Scraping", "Modeling"],
+      "Django analytics site with scraping pipelines, dynamic filtering, and predictive modeling for collegiate Ultimate player performance.",
+    stack: ["Django", "Python", "BeautifulSoup", "scikit-learn"],
   },
   {
     title: "Rideshare Price Prediction Model",
-    category: "Machine Learning Project",
-    year: "2024",
-    link: "#contact",
+    kind: "Machine Learning / Forecasting / 2024",
+    href: "#contact",
     description:
       "Analyzed Uber and Lyft pricing behavior with regression, decision trees, clustering, and a visualization layer for trend exploration and forecasting.",
-    stack: ["Python", "Scikit-learn", "Data Viz", "Forecasting"],
+    stack: ["Python", "scikit-learn", "Data Viz", "Forecasting"],
   },
 ];
 
 const experience = [
   {
-    role: "Software Engineering Intern",
-    company: "Skinstric",
+    company: "Skinstric AI",
+    role: "Software Engineer Intern",
     period: "2026",
+    location: "Remote",
+    bullets: [
+      "Build responsive React, Next.js, and Tailwind features for a production skincare AI platform.",
+      "Integrate REST APIs and the OpenAI Vision API for image-based skin analysis and real-time insights.",
+      "Create reusable component systems and improve cross-device rendering performance.",
+    ],
+    stack: ["React", "Next.js", "TypeScript", "Tailwind", "OpenAI API"],
   },
   {
-    role: "Frontend / Full-Stack Developer",
     company: "Personal & Academic Projects",
+    role: "Frontend / Full-Stack Developer",
     period: "2024 - Present",
+    location: "New York / Boston",
+    bullets: [
+      "Ship end-to-end web, mobile, analytics, and machine learning projects across product surfaces.",
+      "Work across React, Django, Kotlin, Firebase, Supabase, AWS, and API-driven systems.",
+      "Turn open-ended ideas into clear interfaces, useful data flows, and deployable software.",
+    ],
+    stack: ["React", "Django", "Kotlin", "Firebase", "AWS"],
+  },
+];
+
+const skillGroups = [
+  {
+    title: "Languages",
+    count: "10",
+    items: [
+      "Python",
+      "TypeScript",
+      "JavaScript",
+      "Java",
+      "C++",
+      "SQL",
+      "Go",
+      "Kotlin",
+      "HTML",
+      "CSS",
+    ],
   },
   {
-    role: "B.A. in Computer Science",
-    company: "Boston University · GPA 3.77",
-    period: "Graduated May 2025",
+    title: "Frameworks",
+    count: "09",
+    items: [
+      "React",
+      "Next.js",
+      "Tailwind",
+      "Redux",
+      "Axios",
+      "Node.js",
+      "Express",
+      "Django",
+      "Flask",
+    ],
+  },
+  {
+    title: "Data & Cloud",
+    count: "07",
+    items: [
+      "PostgreSQL",
+      "MongoDB",
+      "Firebase",
+      "Supabase",
+      "AWS EC2",
+      "AWS S3",
+      "AWS Amplify",
+    ],
+  },
+  {
+    title: "Tools & AI",
+    count: "08",
+    items: [
+      "Git",
+      "GitHub",
+      "CI/CD",
+      "REST APIs",
+      "OpenAI API",
+      "scikit-learn",
+      "pandas",
+      "NumPy",
+    ],
   },
 ];
 
-const skills = [
-  "React",
-  "Next.js",
-  "TypeScript",
-  "Python",
-  "Java",
-  "Kotlin",
-  "Django",
-  "Flask",
-  "AWS",
-  "SQL",
-  "MongoDB",
-  "GitHub",
-];
-
-const metrics = [
-  { value: "5", label: "Shipped portfolio-ready builds" },
-  { value: "3", label: "Product areas across web, mobile, and ML" },
-  { value: "2025", label: "Boston University CS graduate" },
+const contactLinks = [
+  {
+    label: "Email",
+    value: "victor.jiang987@gmail.com",
+    href: "mailto:victor.jiang987@gmail.com",
+  },
+  {
+    label: "GitHub",
+    value: "github.com/zijunj",
+    href: "https://github.com/zijunj",
+  },
+  {
+    label: "LinkedIn",
+    value: "linkedin.com/in/zi-jun-jiang/",
+    href: "https://www.linkedin.com/in/zi-jun-jiang/",
+  },
+  {
+    label: "Project",
+    value: "strafe-phi.vercel.app",
+    href: "https://strafe-phi.vercel.app/",
+  },
 ];
 
 export default function Home() {
@@ -106,15 +169,6 @@ export default function Home() {
 
     const ctx = gsap.context(() => {
       const heroItems = gsap.utils.toArray<HTMLElement>("[data-hero-item]");
-      const animatedItems = gsap.utils.toArray<HTMLElement>(
-        "[data-animate-item]",
-      );
-
-      gsap.set(animatedItems, {
-        autoAlpha: 1,
-        y: 0,
-        filter: "blur(0px)",
-      });
 
       gsap.set(heroItems, {
         autoAlpha: 0,
@@ -127,372 +181,431 @@ export default function Home() {
         y: 0,
         filter: "blur(0px)",
         duration: 0.75,
-        stagger: 0.09,
+        stagger: 0.08,
         ease: "power2.out",
-        delay: 0.03,
       });
 
-      const groups = gsap.utils.toArray<HTMLElement>("[data-animate-group]");
+      gsap.utils
+        .toArray<HTMLElement>("[data-animate-group]")
+        .forEach((group) => {
+          const items = group.querySelectorAll<HTMLElement>(
+            "[data-animate-item]",
+          );
 
-      groups.forEach((group) => {
-        const items = group.querySelectorAll<HTMLElement>(
-          "[data-animate-item]",
-        );
+          if (!items.length) {
+            return;
+          }
 
-        if (!items.length) {
-          return;
-        }
+          gsap.set(items, {
+            autoAlpha: 0,
+            y: 22,
+            filter: "blur(6px)",
+          });
 
-        gsap.set(items, {
-          autoAlpha: 0,
-          y: 22,
-          filter: "blur(6px)",
+          gsap.to(items, {
+            autoAlpha: 1,
+            y: 0,
+            filter: "blur(0px)",
+            duration: 0.65,
+            stagger: 0.07,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: group,
+              start: "top 88%",
+              toggleActions: "play none none none",
+              once: true,
+            },
+          });
         });
-
-        gsap.to(items, {
-          autoAlpha: 1,
-          y: 0,
-          filter: "blur(0px)",
-          duration: 0.65,
-          stagger: 0.08,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: group,
-            start: "top 88%",
-            toggleActions: "play none none none",
-            once: true,
-          },
-        });
-      });
     }, rootRef);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <main
-      ref={rootRef}
-      className="relative min-h-screen overflow-hidden bg-[var(--background)] text-[var(--foreground)] selection:bg-[var(--accent)] selection:text-black"
-    >
-      <div className="pointer-events-none absolute inset-0">
-        <div className="hero-grid absolute inset-0 opacity-60" />
-        <div className="orb orb-cyan absolute left-[-10rem] top-16 h-80 w-80" />
-        <div className="orb orb-amber absolute right-[-8rem] top-[28rem] h-72 w-72" />
-        <div className="orb orb-blue absolute bottom-24 left-1/3 h-96 w-96" />
-      </div>
+    <main ref={rootRef} className="portfolio-shell">
+      <div className="grid-bg" />
+      <div className="noise-bg" />
 
-      <section className="relative mx-auto flex min-h-screen w-full max-w-7xl flex-col px-6 py-6 md:px-10 lg:px-14">
-        <header
-          data-hero-item
-          className="rounded-full border border-white/10 bg-white/5 px-4 py-3 text-[11px] uppercase tracking-[0.28em] text-white/60 backdrop-blur-md"
-        >
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <span className="h-2 w-2 rounded-full bg-[var(--accent)] shadow-[0_0_20px_var(--accent)]" />
-              <span>Zi jun Jiang</span>
-            </div>
-            <nav className="hidden gap-8 md:flex">
-              <a href="#work" className="transition hover:text-white">
-                Work
-              </a>
-              <a href="#about" className="transition hover:text-white">
-                About
-              </a>
-              <a href="#contact" className="transition hover:text-white">
-                Contact
-              </a>
-            </nav>
+      <nav className="top-nav">
+        <div className="wrap nav-row">
+          <a href="#" className="brand">
+            <span className="brand-dot" />
+            <strong>Zi Jun Jiang</strong>
+            <span>/ FSE</span>
+          </a>
+          <div className="nav-links">
+            <a href="#work">Work</a>
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#stack">Stack</a>
+            <a href="#contact">Contact</a>
           </div>
-        </header>
+          <div className="nav-actions">
+            <a className="pill" href="#contact">
+              Available 2026
+            </a>
+            <a className="pill solid" href="mailto:victor.jiang987@gmail.com">
+              Get in touch
+            </a>
+          </div>
+        </div>
+      </nav>
 
-        <div className="relative grid flex-1 items-center gap-10 py-14 md:py-18 lg:grid-cols-[1.2fr_0.8fr] lg:gap-14 lg:py-20">
-          <div className="space-y-8">
-            <div className="space-y-0">
-              <p
-                data-hero-item
-                className="mb-5 text-[11px] uppercase tracking-[0.34em] text-[var(--muted)]"
-              >
-                Software Engineer / Full Stack Developer
+      <section className="hero-section">
+        <div className="wrap">
+          <div className="hero-layout">
+            <div>
+              <p data-hero-item className="eyebrow">
+                Full Stack Developer / New York
               </p>
-              <h1
-                data-hero-item
-                className="font-display max-w-5xl text-[3.8rem] font-medium uppercase leading-[0.84] tracking-[-0.07em] text-white sm:text-[5rem] md:text-[6.7rem] lg:text-[8.5rem]"
-              >
-                Zi jun
+              <h1 data-hero-item className="display-title">
+                Zi Jun
                 <br />
-                Jiang
+                <span>Jiang.</span>
               </h1>
-              <p
-                data-hero-item
-                className="mt-6 max-w-2xl text-sm leading-8 text-white/68 md:text-base"
-              >
-                Full stack developer with production experience. I ship
-                end-to-end products in React, Next.js, Python, and AWS - from a
-                live Valorant stats platform to an Android skincare app with
-                Firebase and Jetpack Compose
+              <p data-hero-item className="hero-copy">
+                I build production-grade web and mobile products at the
+                intersection of design, AI, and infrastructure using React,
+                Next.js, TypeScript, Python, Kotlin, and AWS.
               </p>
+              <div data-hero-item className="chip-row">
+                <span className="chip">
+                  <span />
+                  Open to full-time roles
+                </span>
+                <span className="chip">
+                  B.A. Computer Science / Boston University
+                </span>
+                <span className="chip">GPA 3.73 / 4.00</span>
+              </div>
             </div>
 
-            <div data-animate-group className="grid gap-4 sm:grid-cols-3">
-              {metrics.map((metric) => (
-                <div
-                  key={metric.label}
-                  data-animate-item
-                  className="tech-panel rounded-3xl p-5"
-                >
-                  <p className="font-display text-4xl font-medium tracking-[-0.05em] text-white">
-                    {metric.value}
-                  </p>
-                  <p className="mt-3 max-w-[16rem] text-sm leading-6 text-white/62">
-                    {metric.label}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
+            <div data-hero-item className="hero-side">
+              <article className="panel hero-card">
+                <p className="status">
+                  <span />
+                  Currently / Software Engineer Intern
+                </p>
+                <h2>Skinstric AI</h2>
+                <p className="meta">2026 / Remote</p>
+                <p>
+                  Building reusable React and Next.js component systems and
+                  integrating OpenAI Vision workflows into a live skincare
+                  analysis platform.
+                </p>
+              </article>
 
-          <div data-hero-item className="space-y-5 lg:justify-self-end">
-            <div className="tech-panel overflow-hidden rounded-[2rem] p-3">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#0a1322]">
-                <Image
-                  src="/profilePicLinkenIn.jpg"
-                  alt="Portrait of Zi jun Jiang"
-                  fill
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 32vw"
-                  className="object-cover object-center"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#07101d] via-transparent to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5">
+              <article className="panel spec-card">
+                <p className="card-label">Engineering DNA</p>
+                <div className="spec-grid">
                   <div>
-                    <p className="text-[11px] uppercase tracking-[0.28em] text-white/50">
-                      Boston / New York
-                    </p>
-                    <p className="mt-2 text-lg font-medium text-white">
-                      Open to software engineering opportunities
-                    </p>
-                  </div>
-                  <span className="h-3 w-3 shrink-0 rounded-full bg-[var(--accent)] shadow-[0_0_24px_var(--accent)]" />
-                </div>
-              </div>
-            </div>
-
-            <div className="tech-panel rounded-[2rem] p-6">
-              <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.28em] text-white/42">
-                <span>Status</span>
-                <span>Open to opportunities</span>
-              </div>
-              <p className="mt-6 text-sm leading-7 text-white/72">
-                I am a Computer Science graduate from Boston University (GPA
-                3.77) currently interning at Skinstric, where I build production
-                React and Next.js components integrated with the OpenAI Vision
-                API. My projects span web platforms, Android apps, data
-                pipelines, and ML models. I am looking for a junior full-stack
-                role where I can keep shipping real product
-              </p>
-              <div className="mt-8 grid gap-3 sm:grid-cols-2">
-                <a
-                  href="#work"
-                  className="rounded-full border border-[color:rgba(120,240,212,0.2)] bg-[color:rgba(120,240,212,0.08)] px-5 py-3 text-center text-[11px] uppercase tracking-[0.28em] text-[var(--foreground)] transition duration-300 hover:border-[color:rgba(120,240,212,0.32)] hover:bg-[color:rgba(120,240,212,0.14)]"
-                >
-                  View Projects
-                </a>
-                <a
-                  href="#contact"
-                  className="rounded-full border border-white/14 px-5 py-3 text-center text-[11px] uppercase tracking-[0.28em] text-white/80 transition duration-300 hover:border-white/30 hover:text-white"
-                >
-                  Contact Me
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          data-hero-item
-          className="flex items-end justify-between gap-4 border-t border-white/10 py-6 text-[11px] uppercase tracking-[0.22em] text-white/48"
-        >
-          <div>Boston / New York</div>
-          <div className="hidden md:block">
-            Designing thoughtful software experiences
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="work"
-        data-animate-group
-        className="relative mx-auto w-full max-w-7xl px-6 py-18 md:px-10 md:py-22 lg:px-14"
-      >
-        <div className="mb-10 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-          <div data-animate-item>
-            <p className="text-[11px] uppercase tracking-[0.34em] text-[var(--muted)]">
-              Selected Work
-            </p>
-            <h2 className="font-display mt-3 text-4xl font-medium uppercase tracking-[-0.05em] text-white md:text-6xl">
-              Featured Systems
-            </h2>
-          </div>
-          <p
-            data-animate-item
-            className="max-w-xl text-sm leading-7 text-white/62"
-          >
-            Projects across product UI, mobile development, analytics, and
-            machine learning, designed to show both implementation depth and
-            strong technical judgment.
-          </p>
-        </div>
-
-        <div className="grid gap-5">
-          {projects.map((project, index) => (
-            <a
-              key={project.title}
-              href={project.link}
-              target={project.link.startsWith("http") ? "_blank" : undefined}
-              rel={
-                project.link.startsWith("http")
-                  ? "noopener noreferrer"
-                  : undefined
-              }
-              data-animate-item
-              className="block"
-            >
-              <article className="project-card rounded-[2rem] p-6 md:p-8">
-                <div className="grid gap-6 md:grid-cols-[90px_1fr_auto] md:items-start">
-                  <div className="text-[11px] uppercase tracking-[0.28em] text-white/32">
-                    0{index + 1}
+                    <span>Frontend</span>
+                    React / Next.js / TS
                   </div>
                   <div>
-                    <p className="text-[11px] uppercase tracking-[0.28em] text-[var(--muted)]">
-                      {project.category}
-                    </p>
-                    <h3 className="font-display mt-3 text-3xl font-medium uppercase tracking-[-0.05em] text-white md:text-5xl">
-                      {project.title}
-                    </h3>
-                    <p className="mt-4 max-w-3xl text-sm leading-7 text-white/66">
-                      {project.description}
-                    </p>
-                    <div className="mt-6 flex flex-wrap gap-2">
-                      {project.stack.map((item) => (
-                        <span
-                          key={item}
-                          className="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[10px] uppercase tracking-[0.22em] text-white/70"
-                        >
-                          {item}
-                        </span>
-                      ))}
-                    </div>
-                    {project.image ? (
-                      <div className="mt-8 overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/5">
-                        <div className="relative aspect-[16/9]">
-                          <Image
-                            src={project.image}
-                            alt={`${project.title} screenshot`}
-                            fill
-                            sizes="(max-width: 768px) 100vw, 60vw"
-                            className="object-cover object-top"
-                          />
-                        </div>
-                      </div>
-                    ) : null}
+                    <span>Backend</span>
+                    Python / Django / Node
                   </div>
-                  <div className="flex items-center justify-between gap-5 text-[11px] uppercase tracking-[0.28em] text-white/35 md:block md:text-right">
-                    <span>{project.year}</span>
-                    <span className="font-display mt-8 block text-2xl text-[var(--accent)]">
-                      →
-                    </span>
+                  <div>
+                    <span>Cloud</span>
+                    AWS / Firebase / Supabase
+                  </div>
+                  <div>
+                    <span>Mobile</span>
+                    Kotlin / Jetpack Compose
                   </div>
                 </div>
               </article>
-            </a>
-          ))}
+            </div>
+          </div>
+
+          <div data-hero-item className="stat-row">
+            <div className="stat">
+              <strong>
+                1<sup>+</sup>yr
+              </strong>
+              <span>Hands-on full-stack experience</span>
+            </div>
+            <div className="stat">
+              <strong>
+                5<sup>+</sup>
+              </strong>
+              <span>Portfolio-ready builds shipped</span>
+            </div>
+            <div className="stat">
+              <strong>
+                10<sup>+</sup>
+              </strong>
+              <span>Languages and frameworks in active use</span>
+            </div>
+          </div>
+
+          <div data-hero-item className="marquee-row">
+            <span>Brooklyn / New York</span>
+            <span>Available May 2026</span>
+            <span>victor.jiang987@gmail.com</span>
+          </div>
         </div>
       </section>
 
-      <section
-        id="about"
-        data-animate-group
-        className="relative mx-auto grid w-full max-w-7xl gap-8 px-6 py-18 md:px-10 md:py-22 lg:grid-cols-[0.85fr_1.15fr] lg:px-14"
-      >
-        <div data-animate-item>
-          <p className="text-[11px] uppercase tracking-[0.34em] text-[var(--muted)]">
-            About
-          </p>
-          <h2 className="font-display mt-3 text-4xl font-medium uppercase leading-[0.92] tracking-[-0.06em] text-white md:text-6xl">
-            Design-led front end.
-            <br />
-            Systems-minded engineering.
-          </h2>
-        </div>
+      <section id="about" data-animate-group className="page-section">
+        <div className="wrap">
+          <header className="section-head">
+            <p data-animate-item className="section-label">
+              [ 01 ] / About
+            </p>
+            <div data-animate-item>
+              <h2>
+                A full-stack engineer who treats <span>interface</span> and{" "}
+                <span>infrastructure</span> as one craft.
+              </h2>
+              <p>
+                I write code that ships, and I care about how it feels. Most of
+                my work lives where AI-driven systems meet human-scale UX.
+              </p>
+            </div>
+          </header>
 
-        <div className="grid gap-6">
-          <div
-            data-animate-item
-            className="tech-panel rounded-[2rem] p-6 md:p-8"
-          >
-            <p className="max-w-3xl text-sm leading-8 text-white/72">
-              I like building interfaces that feel modern, responsive, and
-              intentional. My background spans web development, mobile app
-              development, machine learning coursework, and hands-on projects
-              that combine polished UI with useful real-world functionality.
-            </p>
-            <p className="mt-5 max-w-3xl text-sm leading-8 text-white/72">
-              I work across React, Next.js, Django, Flask, AWS, Kotlin, Java,
-              Python, and SQL, and I enjoy turning ambiguous product ideas into
-              experiences that feel clear and confident.
-            </p>
+          <div className="about-grid">
+            <article data-animate-item className="panel bio-card">
+              <p>
+                <strong>I am a Full Stack Developer based in New York</strong>,
+                with hands-on experience building scalable, AI-driven
+                applications. I am fluent in React, Next.js, TypeScript, and
+                Tailwind on the frontend, and comfortable in Python, Django,
+                Java, and AWS on the backend.
+              </p>
+              <p>
+                Currently I am a Software Engineer Intern at Skinstric AI, where
+                I build production React systems and OpenAI Vision powered
+                experiences. My independent work includes a Valorant esports
+                platform, an Android skincare recommendation app, a Django stats
+                site, and ML forecasting projects.
+              </p>
+              <p className="pull-quote">
+                Actively seeking junior full-stack or frontend full-time roles,
+                starting immediately.
+              </p>
+            </article>
+
+            <aside className="about-sidebar">
+              <article data-animate-item className="panel info-box">
+                <p className="card-label">Quick facts / profile</p>
+                <dl>
+                  <dt>Based</dt>
+                  <dd>New York</dd>
+                  <dt>Status</dt>
+                  <dd>Open to opportunities</dd>
+                  <dt>Role</dt>
+                  <dd>Full-Stack / Frontend Engineer</dd>
+                  <dt>Degree</dt>
+                  <dd>B.A. Computer Science, BU</dd>
+                  <dt>GPA</dt>
+                  <dd>3.73 / 4.00</dd>
+                </dl>
+              </article>
+
+              <article data-animate-item className="panel info-box">
+                <p className="card-label">Currently working on / now</p>
+                <div className="now-list">
+                  <div>
+                    <span>S</span>
+                    <p>
+                      <strong>Skinstric AI</strong>
+                      Frontend systems, OpenAI Vision integration, reusable
+                      components.
+                    </p>
+                  </div>
+                  <div>
+                    <span>P</span>
+                    <p>
+                      <strong>Portfolio projects</strong>
+                      Web platforms, Android apps, data pipelines, and ML
+                      models.
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </aside>
           </div>
+        </div>
+      </section>
 
-          <div className="grid gap-4 md:grid-cols-3">
+      <section id="experience" data-animate-group className="page-section">
+        <div className="wrap">
+          <header className="section-head">
+            <p data-animate-item className="section-label">
+              [ 02 ] / Experience
+            </p>
+            <div data-animate-item>
+              <h2>
+                Currently shipping with a <span>product</span> mindset.
+              </h2>
+              <p>
+                Remote, async, and practical: I build useful product surfaces
+                while sharpening the engineering foundation underneath them.
+              </p>
+            </div>
+          </header>
+
+          <div className="experience-grid">
             {experience.map((item) => (
-              <div
+              <article
                 key={item.role}
                 data-animate-item
-                className="tech-panel rounded-[1.75rem] p-5"
+                className="panel exp-card"
               >
-                <p className="text-[11px] uppercase tracking-[0.26em] text-[var(--muted)]">
-                  {item.period}
-                </p>
-                <h3 className="mt-4 text-lg font-semibold uppercase tracking-[-0.03em] text-white">
-                  {item.role}
-                </h3>
-                <p className="mt-3 text-sm leading-6 text-white/60">
-                  {item.company}
-                </p>
+                <div className="exp-head">
+                  <div>
+                    <p>{item.company}</p>
+                    <h3>{item.role}</h3>
+                  </div>
+                  <span>
+                    {item.period}
+                    <br />
+                    {item.location}
+                  </span>
+                </div>
+                <ul>
+                  {item.bullets.map((bullet) => (
+                    <li key={bullet}>{bullet}</li>
+                  ))}
+                </ul>
+                <div className="tag-row">
+                  {item.stack.map((stack) => (
+                    <span key={stack} className="tag">
+                      {stack}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            ))}
+
+            <article data-animate-item className="panel education-card">
+              <div className="exp-head">
+                <div>
+                  <p>Boston University</p>
+                  <h3>Bachelor of Arts, Computer Science</h3>
+                </div>
+                <span>
+                  Graduated
+                  <br />
+                  May 2025
+                </span>
               </div>
+              <div className="course-grid">
+                <div>
+                  <span>Coursework</span>
+                  Full Stack Development
+                </div>
+                <div>
+                  <span>Coursework</span>
+                  Mobile App Development
+                </div>
+                <div>
+                  <span>Coursework</span>
+                  Machine Learning
+                </div>
+                <div>
+                  <span>GPA</span>
+                  3.73 / 4.00
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="work" data-animate-group className="page-section">
+        <div className="wrap">
+          <header className="section-head">
+            <p data-animate-item className="section-label">
+              [ 03 ] / Selected Work
+            </p>
+            <div data-animate-item>
+              <h2>
+                Things I have <span>built</span> and shipped.
+              </h2>
+              <p>
+                A mix of full-stack platforms, mobile apps, analytics, and
+                machine learning work, scoped and engineered end to end.
+              </p>
+            </div>
+          </header>
+
+          <div className="project-list">
+            {projects.map((project, index) => (
+              <a
+                key={project.title}
+                data-animate-item
+                className="project-row"
+                href={project.href}
+                target={project.href.startsWith("http") ? "_blank" : undefined}
+                rel={
+                  project.href.startsWith("http")
+                    ? "noopener noreferrer"
+                    : undefined
+                }
+              >
+                <span className="project-num">
+                  / {String(index + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <p>{project.kind}</p>
+                  <h3>{project.title}</h3>
+                </div>
+                <div className="project-body">
+                  {project.description}
+                  <div className="tag-row">
+                    {project.stack.map((stack) => (
+                      <span key={stack} className="tag">
+                        {stack}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <span className="arrow">-&gt;</span>
+              </a>
             ))}
           </div>
         </div>
       </section>
 
-      <section
-        data-animate-group
-        className="relative mx-auto w-full max-w-7xl px-6 py-18 md:px-10 md:py-22 lg:px-14"
-      >
-        <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr]">
-          <div data-animate-item>
-            <p className="text-[11px] uppercase tracking-[0.34em] text-[var(--muted)]">
-              Skills
+      <section id="stack" data-animate-group className="page-section">
+        <div className="wrap">
+          <header className="section-head">
+            <p data-animate-item className="section-label">
+              [ 04 ] / Stack
             </p>
-            <h2 className="font-display mt-3 text-4xl font-medium uppercase tracking-[-0.05em] text-white md:text-6xl">
-              Technical Stack
-            </h2>
-          </div>
-
-          <div
-            data-animate-item
-            className="tech-panel rounded-[2rem] p-6 md:p-8"
-          >
-            <div className="flex flex-wrap gap-3">
-              {skills.map((skill) => (
-                <span
-                  key={skill}
-                  className="rounded-full border border-white/12 bg-white/5 px-4 py-2 text-[11px] uppercase tracking-[0.2em] text-white/74"
-                >
-                  {skill}
-                </span>
-              ))}
+            <div data-animate-item>
+              <h2>
+                The <span>tools</span> I reach for daily.
+              </h2>
+              <p>
+                A working set curated from real production, academic, and
+                independent project use.
+              </p>
             </div>
+          </header>
+
+          <div className="skills-grid">
+            {skillGroups.map((group) => (
+              <article
+                key={group.title}
+                data-animate-item
+                className="panel skill-card"
+              >
+                <p className="card-label">
+                  {group.title} <span>/ {group.count}</span>
+                </p>
+                <div>
+                  {group.items.map((item) => (
+                    <span key={item}>{item}</span>
+                  ))}
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -500,56 +613,47 @@ export default function Home() {
       <section
         id="contact"
         data-animate-group
-        className="relative mx-auto w-full max-w-7xl px-6 pb-16 pt-18 md:px-10 md:pb-20 md:pt-22 lg:px-14"
+        className="page-section contact-section"
       >
-        <div
-          data-animate-item
-          className="tech-panel rounded-[2.25rem] p-6 md:p-8 lg:p-10"
-        >
-          <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
+        <div className="wrap">
+          <div data-animate-item className="contact-panel">
             <div>
-              <p className="text-[11px] uppercase tracking-[0.34em] text-[var(--muted)]">
-                Contact
-              </p>
-              <h2 className="font-display mt-3 text-[2.8rem] font-medium uppercase leading-[0.9] tracking-[-0.06em] text-white sm:text-[4rem] md:text-[5.4rem]">
-                Let&apos;s build
-                <br />
-                something precise.
+              <p className="eyebrow">[ 05 ] / Contact</p>
+              <h2>
+                Let&apos;s build something <span>precise.</span>
               </h2>
+              <p>
+                I am looking for junior full-stack or frontend roles, starting
+                immediately. If you are hiring or have an interesting product
+                problem, I would love to talk.
+              </p>
             </div>
 
-            <div className="space-y-5 text-sm leading-7 text-white/70">
-              <p>
-                I&apos;m looking for software engineering opportunities where I
-                can keep growing while helping teams ship thoughtful,
-                high-quality products with strong front-end craft.
-              </p>
-              <div className="flex flex-col gap-3 text-[12px] uppercase tracking-[0.24em] text-white/86">
+            <div className="contact-links">
+              {contactLinks.map((link) => (
                 <a
-                  href="mailto:victor.jiang987@gmail.com"
-                  className="transition hover:text-[var(--accent)]"
+                  key={link.label}
+                  href={link.href}
+                  target={link.href.startsWith("http") ? "_blank" : undefined}
+                  rel={
+                    link.href.startsWith("http")
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
                 >
-                  victor.jiang987@gmail.com
+                  <span>{link.label}</span>
+                  <strong>{link.value}</strong>
+                  <i>-&gt;</i>
                 </a>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://github.com/zijunj"
-                  className="transition hover:text-[var(--accent)]"
-                >
-                  GitHub
-                </a>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://www.linkedin.com/in/zi-jun-jiang/"
-                  className="transition hover:text-[var(--accent)]"
-                >
-                  LinkedIn
-                </a>
-              </div>
+              ))}
             </div>
           </div>
+
+          <footer className="footer-row">
+            <span>2026 / Zi Jun Jiang</span>
+            <span>Designed and engineered end to end</span>
+            <span>New York / Open to relocation</span>
+          </footer>
         </div>
       </section>
     </main>
